@@ -17,30 +17,24 @@ public class Currency {
     private int id;
     
     
-    @JsonProperty("updated")
-    @Column(name = "updated", nullable = false)
-    private String updated;
+    @JsonProperty("code")
+    @Column(name = "code", nullable = false)
+    private String code;
     
+    @JsonProperty("symbol")
+    @Column(name = "symbol", nullable = false)
+    private String symbol;
     
-    @JsonProperty("updatedISO")
-    @Column(name = "updatedISO", nullable = false)
-    private String updatedISO;
+    @JsonProperty("rate")
+    @Column(name = "rate", nullable = false)
+    private String rate;
     
-    @JsonProperty("updateduk")
-    @Column(name = "updateduk", nullable = false)
-    private String updateduk;
+    @JsonProperty("description")
+    @Column(name = "description", nullable = false)
+    private String description;
     
-    
-    @JsonProperty("bpi")
-    @Column(name = "bpi", nullable = false)
-    private String bpi;
-    
-    @JsonProperty("GBP")
-    @Column(name = "GBP", nullable = false)
-    private String GBP;
-    
-    @JsonProperty("EUR")
-    @Column(name = "EUR", nullable = false)
-    private String EUR;
+    @JsonProperty("rate_float")
+    @Column(name = "rate_float", nullable = false)
+    private String rate_float;
     
 }

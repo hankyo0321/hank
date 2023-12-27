@@ -20,7 +20,12 @@ public class BitcoinController {
 
     @GetMapping("/price")
     public String getBitcoinPrice() {
-        return coinDeskService.getCurrentBitcoinPrice();
+       String str =  coinDeskService.getCurrentBitcoinPrice();
+       
+       
+       
+       
+       return str;
     }
 	
 }
