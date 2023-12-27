@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.blog.pojo.Currency;
 
-public interface CurrencyRepository extends JpaRepository<Currency, Integer> {
+public interface CurrencyRepository extends JpaRepository<Currency, Long> {
 	
 	
 	Currency findByCode(String code);
