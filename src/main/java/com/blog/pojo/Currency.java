@@ -7,9 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-@Entity
 @Table(name = "Currency")
+@Entity
 public class Currency {
 
     @Id
