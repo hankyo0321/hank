@@ -7,8 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.Data;
 @Table(name = "Currency")
 @Entity
+@Data
 public class Currency {
 
     @Id

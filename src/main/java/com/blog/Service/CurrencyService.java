@@ -32,7 +32,7 @@ public class CurrencyService {
         return currencyRepository.save(currency);
     }
 
-    public void deleteCurrency(Long id) {
+    public void deleteCurrency(Integer id) {
         currencyRepository.deleteById(id);
     }
 }
