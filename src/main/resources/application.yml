@@ -4,17 +4,15 @@ thymeleaf:
     suffix: .html
     encoding: UTF-8
     mode: HTML5
-coindesk:
-  api:
-    url: https://api.coindesk.com/v1/bpi/currentprice.json
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/hank
-    username: hank
-    password: 
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/sunway
+    username: root
+    password: Woosa0321
+    driver-class-name: com.mysql.cj.jdbc.Driver   
+  resources:
+    static-locations: classpath:/static/, classpath:/public/, classpath:/resources/, classpath:/META-INF/resources/
 jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect

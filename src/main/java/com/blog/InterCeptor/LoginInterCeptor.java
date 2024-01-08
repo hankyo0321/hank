@@ -14,7 +14,6 @@ public class LoginInterCeptor extends WebRequestHandlerInterceptorAdapter{
 	
 	public LoginInterCeptor(WebRequestInterceptor requestInterceptor) {
 		super(requestInterceptor);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
