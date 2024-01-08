@@ -122,7 +122,7 @@ a:hover ,a:focus{
 }
 
 .form-check-input:checked{
-    background-image: url('./check.svg');
+    background-image: url('../static/css/check.svg');
     background-position: center center;
     background-color: var(--primary);
 }
