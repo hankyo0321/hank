@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@SuppressWarnings("deprecation")
 	private User check(String username, String password) throws Exception {
 		if(StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
 			throw new Exception("帳號或密碼為空");
@@ -27,7 +28,7 @@ public class UserServiceImpl implements UserService {
 		
 		User user = new User();
 		Date day= new Date();
-		if(username == this.username1 && password == this.password1) {
+		if(StringUtils.pathEquals(username, this.username1)&& StringUtils.pathEquals(password, this.password1)) {
 			user.setUsername(username);
 			user.setUsername(password);
 			user.setCreateTime(day);

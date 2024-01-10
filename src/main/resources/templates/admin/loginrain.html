@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@800;900&family=Open+Sans:wght@800&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rainyday.js/0.1.2/rainyday.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
 
-    <form  class="card">
-        <h1 class="title">Login</h1>
+    <form  class="card" >
+        <h1 class="title">登入頁面</h1>
         <div class="input-group" >
-            <input type="email" class="form-control" id="email" placeholder="請輸入帳號"/>
-                <label for="email" class="label">人員名稱</label>
+            <input type="username" class="form-control" id="username" placeholder="請輸入帳號"/>
+                <label for="username" class="label">人員名稱</label>
         </div>
         <div class="input-group" >
             <input type="password" class="form-control" id="password" placeholder="請輸入密碼"/>
@@ -31,7 +33,7 @@
             <a href="#">忘記密碼</a>
         </div> 
 
-        <button type="submit" class="btn margin-top">登入</button>
+        <button type="submit" id="submit"  class="btn margin-top">登入</button>
 
     </form>
     <img src="https://images.unsplash.com/photo-1624607391660-d61e7c44c31b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVuFdB8fHx8fA%3D3D&auto=format&fit=crop&w=1030&q=80" alt="" class="img">
@@ -55,5 +57,26 @@
         //  圖片載入時發生跨域問題
         image.crossOrigin = 'anonymous'
     </script>
+    
+    <script type="text/javascript">
+    
+    
+    $("#submit").on('click', function(){
+     axios.get('http://localhost:8080/admin/login',{
+    	 params:{
+    		 username : $("#username").val(),
+    		 password : $("#password").val(), 
+    	 },
+     })
+        .then((res) =>{
+        	debugger;
+            console.log("結果",res);
+            const {seed} = res.data.info;
+        }) 
+    });
+    	
+    </script>
+    
+    
 </body>
 </html>

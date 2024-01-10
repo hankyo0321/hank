@@ -19,8 +19,14 @@ public class appController {
     
     @GetMapping("/blog")
     public String blog(Model model) {
+        model.addAttribute("success", "登入成功ogin"); // （變數名稱，變數值)
+        return "redirect:/admin/blogs";
+    }
+    
+    @GetMapping("/bloginput")
+    public String bloginput(Model model) {
         model.addAttribute("hello", "Hello World!!!"); // （變數名稱，變數值)
-        return "blog";
+        return "admin/blogs-input";
     }
     
     @GetMapping("/hello")
@@ -31,7 +37,7 @@ public class appController {
     
     @GetMapping("/login")
     public String login(Model model) {
-    	return "admin/login 2";
+    	return "admin/loginrain";
     }
     
 }
