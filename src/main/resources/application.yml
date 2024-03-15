@@ -6,12 +6,10 @@ thymeleaf:
     mode: HTML5
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/sunway
+    url: jdbc:mysql://localhost:3306/blog
     username: root
-    password: Woosa0321
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver   
-  resources:
-    static-locations: classpath:/static/, classpath:/public/, classpath:/resources/, classpath:/META-INF/resources/
 jpa:
     hibernate:
       ddl-auto: none
